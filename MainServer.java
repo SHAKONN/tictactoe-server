@@ -5,8 +5,7 @@ import java.net.Socket;
 public class MainServer {
 
     public static void main(String[] args) {
-        String portEnv = System.getenv("PORT");
-        int port = (portEnv != null) ? Integer.parseInt(portEnv) : 5000;
+        int port = 5000; // TCP Proxy in Railway is configured to forward to 5000
         RoomManager roomManager = new RoomManager();
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
